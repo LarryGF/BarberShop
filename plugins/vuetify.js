@@ -8,6 +8,9 @@ import Vuetify, {
 import { Ripple } from 'vuetify/lib/directives'
 
 Vue.use(Vuetify, {
+  theme: {
+    primary: "#d9a154"
+  },
   components: {
     VApp,
     VNavigationDrawer,

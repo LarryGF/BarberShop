@@ -29,16 +29,21 @@ module.exports = {
       href: 'material.css'
     }
     ],
-    script: [{
-      src: 'http://localhost:8686/eel.js'
-    },
-    {
-      src: 'http://localhost:8686/eel.config.js'
-    }
+    script: [
+      //   {
+      //   src: 'http://localhost:8686/eel.js'
+      // },
+      // {
+      //   src: 'http://localhost:8686/eel.config.js'
+      // }
     ]
   },
   plugins: ['~/plugins/vuetify.js'],
-  css: ['~/assets/style/app.styl'],
+  css: [
+    '@assets/style/app.styl',
+    // '@/assets/css/global.css',
+    // '@/assets/css/material.css',
+    '@/assets/css/font/css/materialdesignicons.css'],
   /*
    ** Customize the progress bar color
    */
