@@ -59,7 +59,7 @@
     </v-toolbar>
     <v-content >
     <SnackBar :text="snackBarText" :snackbar="openSnackBar" @close="openSnackBar=false"/>-->
-    <v-img src="background.jpg" gradient="rgba(0,0,0,0),rgba(0,0,0,0.2)">
+    <v-img src="background.png" gradient="rgba(0,0,0,0),rgba(0,0,0,0.6)" :height="windowHeight">
       <v-container>
         <nuxt />
       </v-container>
@@ -93,9 +93,13 @@
 // import LoadDialog from "../components/LoadDialog";
 export default {
   data() {
-    return {};
+    return {
+      windowHeight: ""
+    };
   },
-  mounted: function() {},
+  mounted: function() {
+    this.windowHeight = window.innerHeight;
+  },
   components: {},
 
   methods: {}
