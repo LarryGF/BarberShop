@@ -1,5 +1,5 @@
 <template>
-  <v-img src="background.png" gradient="rgba(0,0,0,0),rgba(0,0,0,0.6)" :height="windowHeight">
+  <v-img src="background.png" gradient="rgba(45,34,18,0.7),rgba(0,0,0,0.6)" :height="windowHeight">
     <v-container>
       <v-flex xs12>
         <v-card height="300px" color="transparent" elevation="4" class="mt-4">
@@ -97,7 +97,7 @@
               <span class="title">Ofertas</span>
             </v-btn>
             <v-divider class="mx-3" dark inset vertical></v-divider>
-            <v-btn flat color="primary">
+            <v-btn flat color="primary" to="catalog">
               <span class="title">Catálogo</span>
             </v-btn>
             <v-divider class="mx-3" dark inset vertical></v-divider>

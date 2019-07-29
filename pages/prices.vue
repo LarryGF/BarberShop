@@ -21,25 +21,6 @@
                   permanent
                   :height="windowHeight/2"
                 >
-                  <!-- <v-toolbar flat class="transparent">
-                    <v-list class="pa-0">
-                      <v-list-tile avatar>
-                        <v-list-tile-avatar>
-                          <img src="https://randomuser.me/api/portraits/men/85.jpg" />
-                        </v-list-tile-avatar>
-
-                        <v-list-tile-content>
-                          <v-list-tile-title>John Leider</v-list-tile-title>
-                        </v-list-tile-content>
-
-                        <v-list-tile-action>
-                          <v-btn icon @click.stop="mini = !mini">
-                            <v-icon>chevron_left</v-icon>
-                          </v-btn>
-                        </v-list-tile-action>
-                      </v-list-tile>
-                    </v-list>
-                  </v-toolbar>-->
                   <v-layout row fill-height>
                     <v-flex xs10>
                       <v-layout column fill-height justify-center>
@@ -74,6 +55,7 @@
             <v-layout row justify-center>
               <v-flex xs6>
                 <v-card
+                  v-ripple
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
@@ -95,6 +77,7 @@
               </v-flex>
               <v-flex xs6>
                 <v-card
+                  v-ripple
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
@@ -118,6 +101,7 @@
             <v-layout row>
               <v-flex xs6>
                 <v-card
+                  v-ripple
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
@@ -139,6 +123,7 @@
               </v-flex>
               <v-flex xs6>
                 <v-card
+                  v-ripple
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
@@ -178,10 +163,11 @@ export default {
       drawer: true,
       items: [
         { title: "Inicio", icon: "mdi-home", to: "/" },
-        { title: "Catálogo", icon: "dashboard", to: "" },
+        { title: "Catálogo", icon: "dashboard", to: "/catalog" },
         { title: "Barberos", icon: "mdi-account", to: "" },
         { title: "Novedades", icon: "mdi-new-box", to: "" }
       ],
+
       mini: true,
       right: null
     };
