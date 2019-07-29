@@ -42,19 +42,22 @@
                   </v-toolbar>-->
                   <v-layout row fill-height>
                     <v-flex xs10>
-                      <v-list class="pt-0" dense>
-                        <v-divider></v-divider>
+                      <v-layout column fill-height justify-center>
+                        <v-list>
+                          <v-list-tile v-for="item in items" :key="item.title" @click="activeBtn=1">
+                            <v-list-tile-action>
+                              <v-icon>{{ item.icon }}</v-icon>
+                            </v-list-tile-action>
 
-                        <v-list-tile v-for="item in items" :key="item.title" @click="activeBtn=1">
-                          <v-list-tile-action>
-                            <v-icon>{{ item.icon }}</v-icon>
-                          </v-list-tile-action>
-
-                          <v-list-tile-content>
-                            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                          </v-list-tile-content>
-                        </v-list-tile>
-                      </v-list>
+                            <v-list-tile-content>
+                              <v-list-tile-title
+                                @click.stop="$router.push(item.to)"
+                              >{{ item.title }}</v-list-tile-title>
+                            </v-list-tile-content>
+                            <v-divider></v-divider>
+                          </v-list-tile>
+                        </v-list>
+                      </v-layout>
                     </v-flex>
                     <v-flex xs2>
                       <v-layout column fill-height justify-center v-if="!mini">
@@ -75,14 +78,41 @@
                   class="ma-3"
                   :height="windowHeight/3"
                   :width="windowWidth"
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, cum consequatur accusamus eos blanditiis nesciunt et? Tenetur eos suscipit voluptatum pariatur. Expedita voluptates obcaecati nemo consectetur asperiores non perspiciatis enim?</v-card>
+                >
+                  <v-container text-xs-center class="py-3">
+                    <span class="display-3 font-weight-medium font-bold">$3</span>
+                    <br />
+                    <br />
+                    <span class="display-1 font-weight-medium">Arreglo de barba</span>
+                    <br />
+                    <br />
+                    <br />
+                    <span
+                      class="title font-weight-medium"
+                    >Un tratamiento completo que a su barba, recorte, forma y peinado que lo dejará satisfecho.</span>
+                  </v-container>
+                </v-card>
               </v-flex>
               <v-flex xs6>
                 <v-card
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse repudiandae natus consequatur minima quasi ipsam dolores vero, eos labore rerum iure fuga aliquam laborum quibusdam blanditiis repellendus voluptatibus soluta illo!</v-card>
+                  :width="windowWidth"
+                >
+                  <v-container text-xs-center class="py-3">
+                    <span class="display-3 font-weight-medium font-bold">$5</span>
+                    <br />
+                    <br />
+                    <span class="display-1 font-weight-medium">Pelado</span>
+                    <br />
+                    <br />
+                    <br />
+                    <span
+                      class="title font-weight-medium"
+                    >Elija de uno de nuestros muchos estilos disponibles o pídale a su barbero el pelado de su preferencia, de cualquier manera saldrá complacido.</span>
+                  </v-container>
+                </v-card>
               </v-flex>
             </v-layout>
             <v-layout row>
@@ -91,14 +121,42 @@
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
-                >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima architecto repellendus qui perspiciatis incidunt doloribus hic expedita cupiditate, aut quasi maxime rem esse vitae blanditiis omnis voluptatem debitis, earum dicta.</v-card>
+                  :width="windowWidth"
+                >
+                  <v-container text-xs-center class="py-3">
+                    <span class="display-3 font-weight-medium font-bold">$2</span>
+                    <br />
+                    <br />
+                    <span class="display-1 font-weight-medium">Peinado</span>
+                    <br />
+                    <br />
+                    <br />
+                    <span
+                      class="title font-weight-medium"
+                    >Todos nuestros peinados se realizan con productos de la mayor calidad, garantizando fijación máxima para que logre un peinado que le durará días.</span>
+                  </v-container>
+                </v-card>
               </v-flex>
               <v-flex xs6>
                 <v-card
                   color="rgba(217,161,84,0.6)"
                   class="ma-3"
                   :height="windowHeight/3"
-                >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste non eligendi reiciendis magni aut ut delectus eaque veniam deleniti laborum dolorum dolores debitis odit hic esse libero, illo nesciunt. Nostrum.</v-card>
+                  :width="windowWidth"
+                >
+                  <v-container text-xs-center class="py-3">
+                    <span class="display-3 font-weight-medium font-bold">$8</span>
+                    <br />
+                    <br />
+                    <span class="display-1 font-weight-medium">Tinte</span>
+                    <br />
+                    <br />
+                    <br />
+                    <span
+                      class="title font-weight-medium"
+                    >Si no está contento con el color de su pelo aquí tenemos la solución para usted, siéntase libre de experimentar cualquier color o combinación de colores para que obtenga el look que anda buscando.</span>
+                  </v-container>
+                </v-card>
               </v-flex>
             </v-layout>
           </v-layout>
@@ -119,8 +177,10 @@ export default {
       windowWidth: "",
       drawer: true,
       items: [
-        { title: "Home", icon: "dashboard" },
-        { title: "About", icon: "question_answer" }
+        { title: "Inicio", icon: "mdi-home", to: "/" },
+        { title: "Catálogo", icon: "dashboard", to: "" },
+        { title: "Barberos", icon: "mdi-account", to: "" },
+        { title: "Novedades", icon: "mdi-new-box", to: "" }
       ],
       mini: true,
       right: null

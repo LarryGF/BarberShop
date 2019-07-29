@@ -110,6 +110,11 @@
             <v-btn flat color="primary">
               <span class="title">Novedades</span>
             </v-btn>
+            <v-divider class="mx-3" dark inset vertical></v-divider>
+
+            <v-btn flat color="primary">
+              <span class="title">Nosotros</span>
+            </v-btn>
             <v-spacer></v-spacer>
 
             <!-- </v-flex> -->
@@ -131,7 +136,7 @@
 export default {
   data: function() {
     return {
-      activeBtn: 1,
+      activeBtn: 10,
       showNav: true,
       color: "#d9a154",
       windowHeight: ""
