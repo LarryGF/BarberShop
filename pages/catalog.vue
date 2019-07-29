@@ -22,16 +22,30 @@
         <v-flex xs6>
           <v-container text-xs-center class="mx-3 py-0" fill-height>
             <v-card class="pa-4" color="rgba(217,161,84,0.6)">
-              <span
-                class="title font-weight-medium"
-              >Si no está contento con el color de su pelo aquí tenemos la solución para usted, siéntase libre de experimentar cualquier color o combinación de colores para que obtenga el look que anda buscando.</span>
+              <span class="title font-weight-medium">{{beard.description}}</span>
             </v-card>
           </v-container>
         </v-flex>
         <v-flex xs6>
-          <v-parallax :src="beard.src" class="ma-4">
+          <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
             <v-container text-xs-center justify-center fill-height>
-              <span class="display-1 font-weight-medium">Tinte</span>
+              <span class="display-3 font-weight-medium">{{beard.title}}</span>
+            </v-container>
+          </v-parallax>
+        </v-flex>
+      </v-layout>
+      <v-layout row v-for="beard in general_service" :key="general_service.indexOf(beard)">
+        <v-flex xs6>
+          <v-container text-xs-center class="mx-3 py-0" fill-height>
+            <v-card class="pa-4" color="rgba(217,161,84,0.6)">
+              <span class="title font-weight-medium">{{beard.description}}</span>
+            </v-card>
+          </v-container>
+        </v-flex>
+        <v-flex xs6>
+          <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
+            <v-container text-xs-center justify-center fill-height>
+              <span class="display-3 font-weight-medium">{{beard.title}}</span>
             </v-container>
           </v-parallax>
         </v-flex>
@@ -54,13 +68,42 @@ export default {
       ],
       beards: [
         {
-          src: "caroussels/beard_grooming/1.png"
+          src: "caroussels/beard_grooming/1.png",
+          title: "BARBA",
+          description:
+            "La barba (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
         },
         {
-          src: "caroussels/beard_grooming/2.png"
+          src: "caroussels/beard_grooming/2.png",
+          title: "BARBA",
+          description:
+            "La barba (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
         },
         {
-          src: "caroussels/beard_grooming/3.png"
+          src: "caroussels/beard_grooming/3.png",
+          title: "BARBA",
+          description:
+            "La barba (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
+        }
+      ],
+      general_service: [
+        {
+          src: "caroussels/general_service/1.png",
+          title: "SERVICIO GENERAL",
+          description:
+            "El servicio general (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
+        },
+        {
+          src: "caroussels/general_service/2.png",
+          title: "SERVICIO GENERAL",
+          description:
+            "El servicio general (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
+        },
+        {
+          src: "caroussels/general_service/3.png",
+          title: "SERVICIO GENERAL",
+          description:
+            "El servicio general (...) Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis impedit nemo corporis quasi non et illum error doloremque quod voluptates magnam ipsam repudiandae consectetur magni rerum perspiciatis, officiis nesciunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nulla dolor cum, exercitationem voluptas suscipit sequi iure, eum, quasi qui dolores expedita vitae quas. Debitis officiis nobis a repellat harum?"
         }
       ],
       top: [
