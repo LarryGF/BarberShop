@@ -9,9 +9,41 @@
           prev-icon="mdi-arrow-left-drop-circle"
           next-icon="mdi-arrow-right-drop-circle"
         >
-          <v-carousel-item v-for="(item,i) in top" :key="i" :src="item.src"></v-carousel-item>
+          <v-carousel-item v-for="(item,i) in top" :key="i" :src="item.src">
+            <v-container fill-height text-xs-center>
+              <v-flex xs4>
+                <span class="display-2 font-weight-black font-italic" style="color:#d9a154">Juan's</span>
+                <v-img src="barber.jpg" height="60px" contain></v-img>
+                <v-icon x-large color="primary">mdi-scissors-cutting</v-icon>
+              </v-flex>
+              <v-flex xs8>
+                <v-spacer></v-spacer>
+              </v-flex>
+            </v-container>
+          </v-carousel-item>
         </v-carousel>
-        <v-tabs dark center grow color="rgba(217,161,84,0.9)" slider-color="white">
+        <v-tabs
+          dark
+          center
+          grow
+          color="rgba(217,161,84,0.9)"
+          slider-color="white"
+          class="hidden-lg-and-up"
+        >
+          <v-spacer></v-spacer>
+          <v-tab v-for="n in items" :key="items.indexOf(n)" @click.stop="$router.push(n.to)">
+            <v-icon>{{n.icon}}</v-icon>
+          </v-tab>
+          <v-spacer></v-spacer>
+        </v-tabs>
+        <v-tabs
+          dark
+          center
+          grow
+          color="rgba(217,161,84,0.9)"
+          slider-color="white"
+          class="hidden-md-and-down"
+        >
           <v-spacer></v-spacer>
           <v-tab v-for="n in items" :key="items.indexOf(n)" @click.stop="$router.push(n.to)">
             <v-icon>{{n.icon}}</v-icon>
@@ -19,23 +51,61 @@
           </v-tab>
           <v-spacer></v-spacer>
         </v-tabs>
-        <v-layout row v-for="beard in beards" :key="beards.indexOf(beard)">
-          <v-flex xs6>
-            <v-container text-xs-center class="mx-3 py-0" fill-height>
-              <v-card class="pa-4" color="rgba(217,161,84,0.6)">
-                <span class="title font-weight-medium">{{beard.description}}</span>
-              </v-card>
-            </v-container>
-          </v-flex>
+        <v-layout
+          row
+          v-for="beard in beards"
+          :key="beards.indexOf(beard)"
+          class="hidden-md-and-down"
+        >
           <v-flex xs6>
             <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
               <v-container text-xs-center justify-center fill-height>
                 <span class="display-3 font-weight-medium">{{beard.title}}</span>
               </v-container>
             </v-parallax>
+          </v-flex>
+          <v-flex xs6>
+            <v-container text-xs-center class="mx-3 py-0" fill-height>
+              <v-card class="pa-4" color="rgba(217,161,84,0.6)">
+                <span class="title font-weight-medium">{{beard.description}}</span>
+              </v-card>
+            </v-container>
           </v-flex>
         </v-layout>
-        <v-layout row v-for="beard in general_service" :key="general_service.indexOf(beard)+100">
+        <v-layout
+          column
+          v-for="beard in beards"
+          :key="beards.indexOf(beard)"
+          class="hidden-lg-and-up"
+        >
+          <v-flex xs6>
+            <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
+              <v-container text-xs-center justify-center fill-height>
+                <span class="display-3 font-weight-medium">{{beard.title}}</span>
+              </v-container>
+            </v-parallax>
+          </v-flex>
+          <v-flex xs6>
+            <v-container text-xs-center class="mr-4 py-0" fill-height justify-center>
+              <v-card class="pa-4" color="rgba(217,161,84,0.6)">
+                <span class="title font-weight-medium">{{beard.description}}</span>
+              </v-card>
+            </v-container>
+          </v-flex>
+        </v-layout>
+        <v-layout
+          row
+          v-for="beard in general_service"
+          :key="general_service.indexOf(beard)+100"
+          class="hidden-md-and-down"
+        >
+          <v-flex xs6>
+            <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
+              <v-container text-xs-center justify-center fill-height>
+                <span class="display-3 font-weight-medium">{{beard.title}}</span>
+              </v-container>
+            </v-parallax>
+          </v-flex>
           <v-flex xs6>
             <v-container text-xs-center class="mx-3 py-0" fill-height>
               <v-card class="pa-4" color="rgba(217,161,84,0.6)">
@@ -43,12 +113,26 @@
               </v-card>
             </v-container>
           </v-flex>
+        </v-layout>
+        <v-layout
+          column
+          v-for="beard in general_service"
+          :key="general_service.indexOf(beard)+100"
+          class="hidden-lg-and-up"
+        >
           <v-flex xs6>
             <v-parallax :src="beard.src" class="ma-4" :height="windowHeight*0.3">
               <v-container text-xs-center justify-center fill-height>
                 <span class="display-3 font-weight-medium">{{beard.title}}</span>
               </v-container>
             </v-parallax>
+          </v-flex>
+          <v-flex xs6>
+            <v-container text-xs-center class="mx-3 py-0" fill-height>
+              <v-card class="pa-4" color="rgba(217,161,84,0.6)">
+                <span class="title font-weight-medium">{{beard.description}}</span>
+              </v-card>
+            </v-container>
           </v-flex>
         </v-layout>
       </v-container>
@@ -61,11 +145,11 @@ export default {
   data: function() {
     return {
       windowHeight: 0,
-      windowHWidth: 0,
+      windowWidth: 0,
       items: [
         { title: "Inicio", icon: "mdi-home", to: "/" },
         { title: "Ofertas", icon: "mdi-database", to: "/prices" },
-        { title: "Barberos", icon: "mdi-account", to: "" },
+        { title: "Barberos", icon: "mdi-account", to: "/barbers" },
         { title: "Novedades", icon: "mdi-new-box", to: "" }
       ],
       beards: [
@@ -126,7 +210,7 @@ export default {
   computed: {},
   mounted() {
     this.windowHeight = window.innerHeight;
-    this.windowHWidth = window.innerWidth;
+    this.windowWidth = window.innerWidth;
   }
 };
 </script>

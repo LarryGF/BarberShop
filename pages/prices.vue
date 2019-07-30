@@ -6,8 +6,18 @@
   >
     <v-container fill-height>
       <v-container justify-space-around>
-        <v-container class="text-xs-center">
-          <span class="display-3 font-weight-black">NUESTROS PRECIOS SIN COMPETENCIA</span>
+        <v-container class="text-xs-center pa-0">
+          <v-layout row>
+            <v-flex xs1>
+              <span class="display-2 font-weight-black font-italic" style="color:#d9a154">Juan's</span>
+              <v-img src="barber.jpg" height="60px" contain></v-img>
+              <v-icon x-large color="primary">mdi-scissors-cutting</v-icon>
+            </v-flex>
+            <v-spacer></v-spacer>
+            <v-flex xs10>
+              <span class="display-3 font-weight-black">NUESTROS PRECIOS SIN COMPETENCIA</span>
+            </v-flex>
+          </v-layout>
         </v-container>
         <v-layout row>
           <v-flex xs2>
@@ -62,6 +72,7 @@
                   :width="windowWidth"
                 >
                   <v-container text-xs-center class="py-3">
+                    <br />
                     <span class="display-3 font-weight-medium font-bold">$3</span>
                     <br />
                     <br />
@@ -84,6 +95,8 @@
                   :width="windowWidth"
                 >
                   <v-container text-xs-center class="py-3">
+                    <br />
+
                     <span class="display-3 font-weight-medium font-bold">$5</span>
                     <br />
                     <br />
@@ -108,6 +121,7 @@
                   :width="windowWidth"
                 >
                   <v-container text-xs-center class="py-3">
+                    <br />
                     <span class="display-3 font-weight-medium font-bold">$2</span>
                     <br />
                     <br />
@@ -130,6 +144,7 @@
                   :width="windowWidth"
                 >
                   <v-container text-xs-center class="py-3">
+                    <br />
                     <span class="display-3 font-weight-medium font-bold">$8</span>
                     <br />
                     <br />
@@ -164,7 +179,7 @@ export default {
       items: [
         { title: "Inicio", icon: "mdi-home", to: "/" },
         { title: "Catálogo", icon: "dashboard", to: "/catalog" },
-        { title: "Barberos", icon: "mdi-account", to: "" },
+        { title: "Barberos", icon: "mdi-account", to: "/barbers" },
         { title: "Novedades", icon: "mdi-new-box", to: "" }
       ],
 

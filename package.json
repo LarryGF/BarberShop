@@ -5,7 +5,7 @@
   "author": "loren larrywtf609@gmail.com",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt -H 0.0.0.0",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"

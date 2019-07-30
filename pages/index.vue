@@ -41,7 +41,7 @@
                   </v-layout>
                 </v-flex>
                 <v-flex xs4>
-                  <span class="display-2 font-weight-black font-italic" style="color:#d9a154">Jose's</span>
+                  <span class="display-2 font-weight-black font-italic" style="color:#d9a154">Juan's</span>
                   <v-img src="barber.jpg" height="60px" contain></v-img>
                   <v-icon x-large color="primary">mdi-scissors-cutting</v-icon>
                 </v-flex>
