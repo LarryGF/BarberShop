@@ -2,7 +2,6 @@
   <v-img
     src="background_prices.png"
     gradient="rgba(45,34,18,0.7),rgba(0,0,0,0.9)"
-    :height="windowHeight"
   >
     <v-container fill-height>
       <v-container justify-space-around>
@@ -62,103 +61,17 @@
           </v-flex>
 
           <v-layout column justify-center>
-            <v-layout row justify-center>
-              <v-flex xs6>
-                <v-card
-                  v-ripple
-                  color="rgba(217,161,84,0.6)"
-                  class="ma-3"
-                  :height="windowHeight/3"
-                  :width="windowWidth"
-                >
-                  <v-container text-xs-center class="py-3">
-                    <br />
-                    <span class="display-3 font-weight-medium font-bold">$3</span>
-                    <br />
-                    <br />
-                    <span class="display-1 font-weight-medium">Arreglo de barba</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span
-                      class="title font-weight-medium"
-                    >Un tratamiento completo que a su barba, recorte, forma y peinado que lo dejará satisfecho.</span>
-                  </v-container>
-                </v-card>
-              </v-flex>
-              <v-flex xs6>
-                <v-card
-                  v-ripple
-                  color="rgba(217,161,84,0.6)"
-                  class="ma-3"
-                  :height="windowHeight/3"
-                  :width="windowWidth"
-                >
-                  <v-container text-xs-center class="py-3">
-                    <br />
+            <v-layout row justify-center wrap>
+         
+              <PriceCard :name="'Arreglo de barba'" :price="3" :description="'Un tratamiento completo que a su barba, recorte, forma y peinado que lo dejará satisfecho.'"/>
 
-                    <span class="display-3 font-weight-medium font-bold">$5</span>
-                    <br />
-                    <br />
-                    <span class="display-1 font-weight-medium">Pelado</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span
-                      class="title font-weight-medium"
-                    >Elija de uno de nuestros muchos estilos disponibles o pídale a su barbero el pelado de su preferencia, de cualquier manera saldrá complacido.</span>
-                  </v-container>
-                </v-card>
-              </v-flex>
+              <PriceCard :name="'Pelado'" :price="5" :description="'Elija de uno de nuestros muchos estilos disponibles o pídale a su barbero el pelado de su preferencia, de cualquier manera saldrá complacido.'"/>
+
+              <PriceCard :name="'Peinado'" :price="2" :description="'Todos nuestros peinados se realizan con productos de la mayor calidad, garantizando fijación máxima para que logre un peinado que le durará días.'"/>
+
+              <PriceCard :name="'Tinte'" :price="8" :description="'Tinte mucho tinte pa que te entinte el tinte'"/>
             </v-layout>
-            <v-layout row>
-              <v-flex xs6>
-                <v-card
-                  v-ripple
-                  color="rgba(217,161,84,0.6)"
-                  class="ma-3"
-                  :height="windowHeight/3"
-                  :width="windowWidth"
-                >
-                  <v-container text-xs-center class="py-3">
-                    <br />
-                    <span class="display-3 font-weight-medium font-bold">$2</span>
-                    <br />
-                    <br />
-                    <span class="display-1 font-weight-medium">Peinado</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span
-                      class="title font-weight-medium"
-                    >Todos nuestros peinados se realizan con productos de la mayor calidad, garantizando fijación máxima para que logre un peinado que le durará días.</span>
-                  </v-container>
-                </v-card>
-              </v-flex>
-              <v-flex xs6>
-                <v-card
-                  v-ripple
-                  color="rgba(217,161,84,0.6)"
-                  class="ma-3"
-                  :height="windowHeight/3"
-                  :width="windowWidth"
-                >
-                  <v-container text-xs-center class="py-3">
-                    <br />
-                    <span class="display-3 font-weight-medium font-bold">$8</span>
-                    <br />
-                    <br />
-                    <span class="display-1 font-weight-medium">Tinte</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span
-                      class="title font-weight-medium"
-                    >Si no está contento con el color de su pelo aquí tenemos la solución para usted, siéntase libre de experimentar cualquier color o combinación de colores para que obtenga el look que anda buscando.</span>
-                  </v-container>
-                </v-card>
-              </v-flex>
-            </v-layout>
+            <v-layout row></v-layout>
           </v-layout>
         </v-layout>
       </v-container>
@@ -167,6 +80,7 @@
 </template>
 
 <script>
+import PriceCard from "../components/price_card";
 export default {
   data: function() {
     return {
@@ -187,7 +101,9 @@ export default {
       right: null
     };
   },
-  components: {},
+  components: {
+    PriceCard
+  },
   methods: {},
   computed: {},
   mounted() {

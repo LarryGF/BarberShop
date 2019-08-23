@@ -29,12 +29,12 @@
                     </v-flex>
                     <v-flex xs10 class="text-xs-left hidden-md-and-down">
                       <span class="title">
-                        Lunes - Sábado
+                        Monday - Saturday
                         <br />9:00am - 5:00pm
                       </span>
                       <br />
                       <span class="title">
-                        Domingos
+                        Sunday
                         <br />10:00am - 1:00pm
                       </span>
                     </v-flex>
@@ -54,17 +54,17 @@
                           <template #activator="data">
                             <v-icon medium v-on="data.on">mdi-phone-outline</v-icon>
                           </template>
-                          <span class="title">+535 386 29 08</span>
+                          <!--<span class="title">+535 386 29 08</span>-->
                           <br />
-                          <span class="title">Llame para reservar</span>
+                          <span class="title">Call us</span>
                         </v-tooltip>
                         <v-icon medium class="hidden-md-and-down">mdi-phone-outline</v-icon>
                       </v-container>
                     </v-flex>
 
-                    <v-flex xs4 class="text-xs-left mb-3 hidden-md-and-down">
-                      <span class="title">+535 386 29 08</span>
-                      <span class="title">Llame para reservar</span>
+                    <v-flex xs4 class="text-xs-left  hidden-md-and-down">
+                      <!-- <span class="title">+535 386 29 08</span> -->
+                      <span class="title">Call to reserve today.</span>
                     </v-flex>
                   </v-layout>
                 </v-flex>
@@ -94,28 +94,32 @@
           >
             <!-- <v-flex xs9> -->
             <v-btn flat color="primary" to="prices">
-              <span class="title">Ofertas</span>
+              <span class="title hidden-md-and-down">Offers</span>
+              <v-icon class="hidden-lg-and-up">mdi-database</v-icon>
             </v-btn>
-            <v-divider class="mx-3" dark inset vertical></v-divider>
+            <v-divider class="mx-3 hidden-md-and-down" dark inset vertical></v-divider>
             <v-btn flat color="primary" to="catalog">
-              <span class="title">Catálogo</span>
+              <span class="title hidden-md-and-down">Catalog</span>
+              <v-icon class="hidden-lg-and-up">dashboard</v-icon>
             </v-btn>
-            <v-divider class="mx-3" dark inset vertical></v-divider>
+            <v-divider class="mx-3 hidden-md-and-down" dark inset vertical></v-divider>
 
             <v-btn flat color="primary">
-              <span class="title">Barberos</span>
+              <span class="title hidden-md-and-down">Barbers</span>
+              <v-icon class="hidden-lg-and-up">mdi-account</v-icon>
             </v-btn>
-            <v-divider class="mx-3" dark inset vertical></v-divider>
+            <v-divider class="mx-3 hidden-md-and-down" dark inset vertical></v-divider>
 
             <v-btn flat color="primary">
-              <span class="title">Novedades</span>
+              <span class="title hidden-md-and-down">News</span>
+              <v-icon class="hidden-lg-and-up">mdi-new-box</v-icon>
             </v-btn>
-            <v-divider class="mx-3" dark inset vertical></v-divider>
+            <v-divider class="mx-3 hidden-md-and-down" dark inset vertical></v-divider>
 
             <v-btn flat color="primary">
-              <span class="title">Nosotros</span>
+              <span class="title hidden-md-and-down">Us</span>
+              <v-icon class="hidden-lg-and-up">mdi-circle</v-icon>
             </v-btn>
-            <v-spacer></v-spacer>
 
             <!-- </v-flex> -->
             <!-- <v-flex xs3>
