@@ -21,5 +21,10 @@ pipeline {
 
       }
     }
+    stage('Inform of build') {
+      steps {
+        slackSend (channel: '@UPNG22ZE2', message: 'Zip created')
+      }
+    }
   }
 }
