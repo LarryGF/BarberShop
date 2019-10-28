@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Nuxt.js + Vuetify.js project",
   "author": "loren larrywtf609@gmail.com",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "nuxt -H 0.0.0.0",
     "build": "nuxt build",
