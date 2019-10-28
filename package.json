@@ -8,7 +8,10 @@
     "dev": "nuxt -H 0.0.0.0",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "format": "prettier --write 'src/**/*.js'",
+    "check-eslint-config": "eslint --print-config src/index.js | eslint-config-prettier-check",
+    "lintfix-src": "eslint --fix src"
   },
   "dependencies": {
     "d3": "^5.9.2",
