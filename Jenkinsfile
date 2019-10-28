@@ -2,9 +2,21 @@ pipeline {
   agent any
   stages {
     stage('Install dependencies') {
-      steps {
-        sh 'npm install'
-        echo 'dependencies installed'
+      parallel {
+        stage('Install dependencies') {
+          steps {
+            sh 'npm install'
+            echo 'dependencies installed'
+          }
+        }
+        stage('Check for linting') {
+          steps {
+            warnError(catchInterruptions: true, message: 'Checking for linting errors') {
+              sh 'npm run check-eslint-config'
+            }
+
+          }
+        }
       }
     }
     stage('Build files') {
@@ -23,7 +35,7 @@ pipeline {
     }
     stage('Inform of build') {
       steps {
-        slackSend (channel: '@UPNG22ZE2', message: "Zip created for build: #${BUILD_NUMBER},on branch ${BRANCH_NAME}, go to ${BUILD_URL} to see results")
+        slackSend(channel: '@UPNG22ZE2', message: "Zip created for build: #${BUILD_NUMBER},on branch ${BRANCH_NAME}, go to ${BUILD_URL} to see results")
       }
     }
   }
