@@ -19,11 +19,7 @@ pipeline {
         }
       }
     }
-    stage('Build files') {
-      steps {
-        sh 'npm run generate'
-      }
-    }
+    
     stage('Generate static .zip') {
       steps {
         dir(path: 'dist') {
@@ -33,10 +29,6 @@ pipeline {
 
       }
     }
-    stage('Inform of build') {
-      steps {
-        slackSend(channel: '@UPNG22ZE2', message: "Zip created for build: #${BUILD_NUMBER},on branch ${BRANCH_NAME}, go to ${BUILD_URL} to see results")
-      }
-    }
+    
   }
 }
